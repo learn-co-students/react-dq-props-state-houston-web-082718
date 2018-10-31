@@ -4,11 +4,10 @@ import normalBaby from './assets/unadulterated-hoglette.png'
 import SunBaby from './assets/sun-eyes.png'
 import BlueBaby from './assets/blue-eyes.png'
 import GlowingBaby from './assets/glowing-eyes.png'
-import MasterHog from './MasterHog'
 
 // is there a way we could associate eye color string values with images?
 // perhaps so we could do something along the lines of `eyeColorMapper['blue'] and get back the right image?`
-
+const eyeColorMapper = {'blue': BlueBaby, 'sun': SunBaby, 'glowing': GlowingBaby, 'normal': normalBaby}
 export default class BabyHog extends Component {
 
     constructor(props) {
@@ -28,7 +27,7 @@ export default class BabyHog extends Component {
 
     render() {
         const {hog, hog: { name, hobby }, eyeColor} = this.props
-        console.log(this.props.hog)
+
         return (
             <li className="hogbabies">
                 <h1>Name: {name}</h1>
@@ -44,7 +43,7 @@ export default class BabyHog extends Component {
                 </Button>
 
                 <div className="hb-wrap">
-                    <img src={normalBaby} style={{
+                    <img src={eyeColorMapper[eyeColor]} style={{
                             height: '200px'
                         }} alt="MasterBlasterJrJr"/>
                 </div>

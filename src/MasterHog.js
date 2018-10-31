@@ -8,7 +8,7 @@ export default class MasterHog extends Component {
     constructor() {
         super()
         this.state = {
-            eyeColor: "blue"
+            eyeColor: "normal"
         }
     }
 
